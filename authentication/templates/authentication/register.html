@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Body background styling */
+        body {
+            background: linear-gradient(to right, #F6DDCC, #F6DDCC);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Card for register form */
+        .register-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        /* Title styling */
+        .register-card h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        /* Form input styling */
+        .form-control {
+            border-radius: 50px;
+            padding: 10px 20px;
+        }
+
+        /* Primary button styling */
+        .btn-primary {
+            background-color: #E59866;
+            border-color:#E59866;
+            border-radius: 50px;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #F5CBA7;
+            border-color: #F5CBA7;
+        }
+
+        /* Text link styling */
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .login-link a {
+            color: #E59866;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            color:#F5CBA7;
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .register-card {
+                padding: 20px;
+            }
+
+            .register-card h1 {
+                font-size: 1.8rem;
+            }
+
+            .form-control, .btn-primary {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-card">
+        <h1>Register</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <div class="login-link">
+            <p class="mt-3">Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

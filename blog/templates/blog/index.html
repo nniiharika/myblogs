@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .navbar-custom {
+            background-color: #EDBB99; /* Light background color */
+        }
+        .navbar-nav .nav-item {
+            margin-right: 12px; /* Spacing between items */
+        }
+        body {
+            background-color:#F6DDCC; /* Using hex code for muted teal */
+            font-family: Arial, sans-serif; /* Use a more modern font */
+        }
+        .container {
+            background-color: #fff; /* White background for content area */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+            padding: 40px; /* Increased padding */
+            margin-top: 90px; /* Spacing from top */
+            max-width: 900px; /* Limit the width */
+            margin-left: auto; /* Centering */
+            margin-right: auto; /* Centering */
+        }
+        h1 {
+            color: #333; /* Dark text color */
+            margin-bottom: 60px; /* Spacing below heading */
+            font-size: 2.5em; /* Larger heading */
+            text-align: center; /* Center the heading */
+        }
+        p {
+            font-size: 1.2em; /* Larger text for paragraphs */
+            line-height: 1.6; /* Improved line height for readability */
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 25px; /* Larger button size */
+            background-color:#EB984E; /* Bootstrap primary color */
+            color: white;
+            border-radius: 5px;
+            text-decoration: none; /* No underline */
+            transition: background-color 0.3s; /* Smooth transition */
+            font-size: 1.2em; /* Larger text for button */
+        }
+        .cta-btn:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+        @media (max-width: 576px) {
+            .navbar-nav {
+                text-align: center; /* Center navigation on small screens */
+            }
+            .navbar-nav .nav-item {
+                margin: 5cappx 0; /* Spacing between nav items */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Full-width Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Blog</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'create_blog' %}">Create Blog</a> <!-- Create Blog Link -->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'home' %}">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>Welcome to My Blogs</h1>
+        <p>This is a platform for sharing your thoughts and ideas through blog posts. Whether you're an avid writer or someone just starting out, this space is designed to foster creativity and meaningful discussions. Here, you can explore a diverse range of topics, from personal experiences and hobbies to in-depth analyses of current events and emerging trends.</p>
+        
+            
+        </p>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

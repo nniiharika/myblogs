@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ blog.title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+        }
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ blog.title }}</h1>
+    {% if blog.image %}
+    <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+    {% endif %}
+    <p>{{ blog.content }}</p>
+    <p><small>By {{ blog.author.username }} on {{ blog.created_at }}</small></p>
+</body>
+</html>
