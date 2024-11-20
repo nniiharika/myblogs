@@ -1,0 +1,4 @@
+djano
+reportlab
+PyPDF2
+pillow
